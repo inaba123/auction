@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-   get 'items' => 'items#index'
-
+  get 'items/new' => 'items#new'
+  get 'items' => 'items#index'
   get 'items/:id' => 'items#show'
-
+  post '/items' => 'items#create'
+  #post はデータをあっぷするいめーじ 更新はpatch
 
   #右側のshowはviewsのitemsのshow.html.erbを呼び出すためのshow
   #左側のitems/3はブラウザでlocalhost:3000のあとにつけてよびだすためのパスとあわせる

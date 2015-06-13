@@ -1,0 +1,29 @@
+<h1>新規商品登録フォーム</h1>
+
+<%= form_for @item do |f| %>
+<p>
+  商品名:<br>
+  <%= f.text_field :name %>
+</p>
+
+<p>
+  商品詳細:<%= f.text_area :description %>
+</p>
+
+<p>
+  価格:<%= f.number_field :price %>
+</p>
+
+<p>
+  売り手ID:<%= f.text_field :seller_id %>
+</p>
+
+<p>
+  電子メール:<%= f.text_field :email %>
+</p>
+
+<p>
+  イメージ画像:<%= f.text_field :image_url %>
+</p>
+<%= f.submit '登録する' %>
+<% end %>
