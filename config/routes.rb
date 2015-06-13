@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+   get 'items' => 'items#index'
+
+  get 'items/:id' => 'items#show'
+
+
+  #右側のshowはviewsのitemsのshow.html.erbを呼び出すためのshow
+  #左側のitems/3はブラウザでlocalhost:3000のあとにつけてよびだすためのパスとあわせる
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
