@@ -29,12 +29,14 @@ class ItemsController < ApplicationController
   end
 
   def update
-    #:idでItem.find
+    #:idでItem.find 旧データよみだし
     @item = Item.find(params[:id])
 
-    #update_attributeメソッドで上書き保存
+    #新しいデータをupdate_attributeメソッドで上書き保存
     @item.update_attributes(item_params)
 
+    #showにリダイレクトしてる。
+    #そのための設定はrouteにある
     redirect_to "/items/#{@item.id}"
 
   end
