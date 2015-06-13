@@ -22,7 +22,26 @@ class ItemsController < ApplicationController
     redirect_to "/items/#{@item.id}"
   end
 
+  def edit
+    #http://localhost:3000/items/5/edit
+    #上のURLの５を取得して、@item = Item.find(5)
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    #:idでItem.find
+    @item = Item.find(params[:id])
+
+    #update_attributeメソッドで上書き保存
+    @item.update_attributes(item_params)
+
+    redirect_to "/items/#{@item.id}"
+
+  end
+
   private
+#これより下はViewとかから参照できなくなる　プライベードは
+#例外時です
 
   def item_params
     # pramams.require(:key).permit(filter)

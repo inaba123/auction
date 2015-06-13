@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   get 'items' => 'items#index'
   get 'items/:id' => 'items#show'
   post '/items' => 'items#create'
+
+  get '/items/:id/edit' => 'items#edit'
+  patch '/items/:id' => 'items#update'
+
   #post はデータをあっぷするいめーじ 更新はpatch
 
   #右側のshowはviewsのitemsのshow.html.erbを呼び出すためのshow
